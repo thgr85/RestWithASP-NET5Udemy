@@ -8,12 +8,12 @@
       "dotnetRunMessages": true,
       "applicationUrl": "http://localhost:5008",
       "launchBrowser": true,
-      "launchUrl": "calculator/sum/2/3"
+      "launchUrl": "api/person"
     },
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "calculator/sum",
+      "launchUrl": "api/person",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

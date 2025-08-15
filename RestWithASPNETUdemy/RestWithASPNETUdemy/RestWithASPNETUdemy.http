@@ -1,6 +1,6 @@
 @RestWithASPNETUdemy_HostAddress = http://localhost:5008
 
-GET {{RestWithASPNETUdemy_HostAddress}}/calculator
+GET {{RestWithASPNETUdemy_HostAddress}}/api/person
 Accept: application/json
 
 ###
