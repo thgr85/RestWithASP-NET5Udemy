@@ -1,7 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using RestWithASPNETUdemy.Model.Context;
-using RestWithASPNETUdemy.Service;
-using RestWithASPNETUdemy.Service.Implementations;
+using RestWithASPNETUdemy.Business;
+using RestWithASPNETUdemy.Business.Implementations;
+using RestWithASPNETUdemy.Repository;
+using RestWithASPNETUdemy.Repository.Implementations;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,7 +17,8 @@ builder.Services.AddDbContext<MySQLContext>(options => options.UseMySql(connecti
 
 builder.Services.AddApiVersioning();
 
-builder.Services.AddScoped<IPersonService, PersonServiceImplementation>();
+builder.Services.AddScoped<IPersonBusiness, PersonBusinessImplementation>();
+builder.Services.AddScoped<IPersonRepository, PersonRepositoryImplementation>();
 
 builder.Services.AddOpenApi();
 
