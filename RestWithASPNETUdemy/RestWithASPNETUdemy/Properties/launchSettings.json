@@ -8,7 +8,7 @@
       "dotnetRunMessages": true,
       "applicationUrl": "http://localhost:5008",
       "launchBrowser": true,
-      "launchUrl": "api/person/v1"
+      "launchUrl": "api/persons/v1"
     },
     "IIS Express": {
       "commandName": "IISExpress",
@@ -16,7 +16,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
       "launchBrowser": true,
-      "launchUrl": "api/person/v1"
+      "launchUrl": "api/persons/v1"
     }
   },
   "$schema": "https://json.schemastore.org/launchsettings.json",
