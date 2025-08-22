@@ -6,7 +6,7 @@ using RestWithASPNETUdemy.Model.Context;
 using RestWithASPNETUdemy.Business;
 using RestWithASPNETUdemy.Business.Implementations;
 using RestWithASPNETUdemy.Repository;
-using RestWithASPNETUdemy.Repository.Implementations;
+using RestWithASPNETUdemy.Repository.Generic;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,9 +23,8 @@ if (builder.Environment.IsDevelopment())
 builder.Services.AddApiVersioning();
 
 builder.Services.AddScoped<IPersonBusiness, PersonBusinessImplementation>();
-builder.Services.AddScoped<IPersonRepository, PersonRepositoryImplementation>();
 builder.Services.AddScoped<IBookBusiness, BookBusinessImplementation>();
-builder.Services.AddScoped<IBookRepository, BookRepositoryImplementation>();
+builder.Services.AddScoped(typeof(IRepository<>), typeof(GenericRepository<>));
 
 builder.Services.AddOpenApi();
 
