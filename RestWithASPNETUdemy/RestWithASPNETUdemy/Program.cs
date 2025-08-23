@@ -7,6 +7,7 @@ using RestWithASPNETUdemy.Business;
 using RestWithASPNETUdemy.Business.Implementations;
 using RestWithASPNETUdemy.Repository;
 using RestWithASPNETUdemy.Repository.Generic;
+using System.Net.Http.Headers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +20,13 @@ if (builder.Environment.IsDevelopment())
 {
     MigrateDatabase(connection);
 }
+
+builder.Services.AddMvc(options =>
+{
+	options.RespectBrowserAcceptHeader = true;
+	options.FormatterMappings.SetMediaTypeMappingForFormat("xml", "application/xml");
+	options.FormatterMappings.SetMediaTypeMappingForFormat("json", "application/json");
+}).AddXmlSerializerFormatters();
 
 builder.Services.AddApiVersioning();
 
