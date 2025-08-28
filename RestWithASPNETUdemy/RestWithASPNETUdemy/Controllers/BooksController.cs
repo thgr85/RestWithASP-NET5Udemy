@@ -21,6 +21,10 @@ public class BooksController : ControllerBase
     }
 
     [HttpGet]
+    [ProducesResponseType((200), Type = typeof(List<PersonVO>))]
+    [ProducesResponseType((204))]
+    [ProducesResponseType((400))]
+    [ProducesResponseType((401))]
     [TypeFilter(typeof(HyperMediaFilter))]
     public IActionResult Get()
     {
@@ -28,6 +32,10 @@ public class BooksController : ControllerBase
     }
 
     [HttpGet("{id}")]
+    [ProducesResponseType((201), Type = typeof(PersonVO))]
+    [ProducesResponseType((204))]
+    [ProducesResponseType((400))]
+    [ProducesResponseType((401))]
     [TypeFilter(typeof(HyperMediaFilter))]
     public IActionResult Get(long id)
     {
@@ -37,6 +45,9 @@ public class BooksController : ControllerBase
     }
 
     [HttpPost]
+    [ProducesResponseType((201), Type = typeof(PersonVO))]
+    [ProducesResponseType((400))]
+    [ProducesResponseType((401))]
     [TypeFilter(typeof(HyperMediaFilter))]
     public IActionResult Post([FromBody] BookVO book)
     {
@@ -45,6 +56,9 @@ public class BooksController : ControllerBase
     }
 
     [HttpPut]
+    [ProducesResponseType((200), Type = typeof(PersonVO))]
+    [ProducesResponseType((400))]
+    [ProducesResponseType((401))]
     [TypeFilter(typeof(HyperMediaFilter))]
     public IActionResult Put([FromBody] BookVO book)
     {
@@ -53,6 +67,9 @@ public class BooksController : ControllerBase
     }
 
     [HttpDelete("{id}")]
+    [ProducesResponseType((204))]
+    [ProducesResponseType((400))]
+    [ProducesResponseType((401))]
     public IActionResult Delete(long id)
     {
         _bookBusiness.Delete(id);

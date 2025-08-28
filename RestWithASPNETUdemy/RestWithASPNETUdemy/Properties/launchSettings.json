@@ -7,16 +7,14 @@
       },
       "dotnetRunMessages": true,
       "applicationUrl": "http://localhost:5008",
-      "launchBrowser": true,
-      "launchUrl": "api/persons/v1"
+      "launchBrowser": true
     },
     "IIS Express": {
       "commandName": "IISExpress",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
-      "launchBrowser": true,
-      "launchUrl": "api/persons/v1"
+      "launchBrowser": true
     }
   },
   "$schema": "https://json.schemastore.org/launchsettings.json",
