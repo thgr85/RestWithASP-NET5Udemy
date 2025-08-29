@@ -20,6 +20,13 @@ var description = "API RESTful developed in the course 'REST API's from 0 to Azu
 
 builder.Services.AddRouting(options => options.LowercaseUrls = true);
 
+builder.Services.AddCors(options => options.AddDefaultPolicy(policy =>
+{
+	policy.AllowAnyOrigin()
+		.AllowAnyMethod()
+		.AllowAnyHeader();
+}));
+
 builder.Services.AddControllers();
 
 var connection = builder.Configuration["MySQLConnection:MySQLConnectionString"];
@@ -74,11 +81,13 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
 }
 
+app.UseCors();
+
 app.UseSwagger();
 
 app.UseSwaggerUI(c =>
 {
-	c.SwaggerEndpoint("/swagger/v1/swagger.json", "REST API's from 0 to Azure with ASP NET Core 5 and Docker - v1");
+	c.SwaggerEndpoint("/swagger/v1/swagger.json", $"{title} - v1");
 });
 
 var option = new RewriteOptions();
